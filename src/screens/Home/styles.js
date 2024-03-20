@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#F2E3E6"
   },
   button: {
     marginTop: 20,
@@ -12,6 +13,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#C9D4FF",
     borderRadius: 5,
   },
+  img: {
+    with: 10
+  }
 });
 
 export default styles;

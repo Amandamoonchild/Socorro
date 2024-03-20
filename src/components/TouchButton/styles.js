@@ -8,8 +8,11 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 20,
     padding: 10,
-    backgroundColor: "#C9D4FF",
+    backgroundColor: "#8ECEF4",
     borderRadius: 5,
+    width: 300,
+    borderColor: "#F16822",
+    borderWidth: 2
   },
 });
 

@@ -2,10 +2,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
 
 import Home from "../screens/Home";
-import Profile from "../screens/Profile";
 import Category from "../screens/Category";
 import Users from "../screens/Users";
 import { user } from "../data/Profile";
+import Sobre from "../screens/Sobre";
+import Filiais from "../screens/Filiais";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,8 +14,8 @@ const TabRoutes = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
-        name="Profile"
-        component={Profile}
+        name="Filiais"
+        component={Filiais}
         initialParams={{ data: user }}
         options={{
           tabBarIcon: ({ focused }) => (
@@ -24,7 +25,7 @@ const TabRoutes = () => {
               color={focused ? "#131313" : "#D6D6D6"}
             />
           ),
-          tabBarLabel: "Perfil",
+          tabBarLabel: "Filiais",
           tabBarActiveTintColor: "#131313",
           tabBarInactiveTintColor: "#D6D6D6",
         }}
@@ -79,6 +80,23 @@ const TabRoutes = () => {
           tabBarInactiveTintColor: "#D6D6D6",
         }}
       />
+      <Tab.Screen
+        name="Sobre"
+        component={Sobre}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Feather
+              name="list"
+              size={24}
+              color={focused ? "#131313" : "#D6D6D6"}
+            />
+          ),
+          tabBarLabel: "Sobre",
+          tabBarActiveTintColor: "#131313",
+          tabBarInactiveTintColor: "#D6D6D6",
+        }}
+      />
+
     </Tab.Navigator>
   );
 };

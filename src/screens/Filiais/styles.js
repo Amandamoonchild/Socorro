@@ -13,17 +13,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#C9D4FF",
     borderRadius: 5,
   },
-  img: {
-    width: 610,
-    height: 410
+  fili: {
+    borderRadius: 5,
+    width: 300,
+    backgroundColor: "#C9D4FF",
+    borderColor: "#F16822",
+    borderWidth: 2,
+    marginTop: 20
   },
-  txt: {
-    marginTop: 20,
+  text: {
     fontSize: 16,
-    fontWeight: "bold",
-    textAlign: "center",
-    color: "#F16822"
-  }
+  },
 });
 
 export default styles;

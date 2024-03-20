@@ -2,9 +2,11 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Feather } from "@expo/vector-icons";
 
 import Home from "../screens/Home";
-import Profile from "../screens/Profile";
+
 import Category from "../screens/Category";
 import { user } from "../data/Profile";
+import Sobre from "../screens/Sobre";
+import Filiais from "../screens/Filiais";
 
 const Drawer = createDrawerNavigator();
 
@@ -29,8 +31,8 @@ const DrawerRoutes = () => {
         }}
       />
       <Drawer.Screen
-        name="Profile"
-        component={Profile}
+        name="Filiais"
+        component={Filiais}
         initialParams={{ data: user }}
         options={{
           headerTitle: "",
@@ -41,7 +43,25 @@ const DrawerRoutes = () => {
               color={focused ? "#131313" : "#D6D6D6"}
             />
           ),
-          drawerLabel: "Perfil",
+          drawerLabel: "Filiais",
+          drawerActiveTintColor: "#131313",
+          drawerInactiveTintColor: "#D6D6D6",
+        }}
+      />
+      <Drawer.Screen
+        name="Sobre"
+        component={Sobre}
+        initialParams={{ data: user }}
+        options={{
+          headerTitle: "",
+          drawerIcon: ({ focused }) => (
+            <Feather
+              name="user"
+              size={24}
+              color={focused ? "#131313" : "#D6D6D6"}
+            />
+          ),
+          drawerLabel: "Sobre",
           drawerActiveTintColor: "#131313",
           drawerInactiveTintColor: "#D6D6D6",
         }}
