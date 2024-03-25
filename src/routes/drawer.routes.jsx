@@ -2,11 +2,9 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Feather } from "@expo/vector-icons";
 
 import Home from "../screens/Home";
-
-import Category from "../screens/Category";
+import Profile from "../screens/Profile";
+import Form from "../screens/Form";
 import { user } from "../data/Profile";
-import Sobre from "../screens/Sobre";
-import Filiais from "../screens/Filiais";
 
 const Drawer = createDrawerNavigator();
 
@@ -31,8 +29,8 @@ const DrawerRoutes = () => {
         }}
       />
       <Drawer.Screen
-        name="Filiais"
-        component={Filiais}
+        name="Profile"
+        component={Profile}
         initialParams={{ data: user }}
         options={{
           headerTitle: "",
@@ -43,32 +41,14 @@ const DrawerRoutes = () => {
               color={focused ? "#131313" : "#D6D6D6"}
             />
           ),
-          drawerLabel: "Filiais",
+          drawerLabel: "Perfil",
           drawerActiveTintColor: "#131313",
           drawerInactiveTintColor: "#D6D6D6",
         }}
       />
       <Drawer.Screen
-        name="Sobre"
-        component={Sobre}
-        initialParams={{ data: user }}
-        options={{
-          headerTitle: "",
-          drawerIcon: ({ focused }) => (
-            <Feather
-              name="user"
-              size={24}
-              color={focused ? "#131313" : "#D6D6D6"}
-            />
-          ),
-          drawerLabel: "Sobre",
-          drawerActiveTintColor: "#131313",
-          drawerInactiveTintColor: "#D6D6D6",
-        }}
-      />
-      <Drawer.Screen
-        name="Category"
-        component={Category}
+        name="Form"
+        component={Form}
         options={{
           headerTitle: "",
           drawerIcon: ({ focused }) => (

@@ -2,9 +2,8 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    width: "100%",
+    height: 800,
     backgroundColor: "#F2E3E6"
   },
   button: {
@@ -13,12 +12,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#C9D4FF",
     borderRadius: 5,
   },
-  txt: {
-    marginTop: 20,
-    fontSize: 16,
-    fontWeight: "bold",
+  userInput: {
+    padding: 8,
+    borderBottomColor: "black",
+    borderBottomWidth: 1,
+    width: 600
+  },
+  img: {
     textAlign: "center",
-    color: "#F16822"
+    borderRadius: 3,
+    marginLeft: 20
+  },
+  txt: {
+    textAlign: "center",
+    fontSize: 18
   }
 });
 

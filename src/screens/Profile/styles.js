@@ -3,32 +3,31 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 50,
+    justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#F2E3E6"
   },
-  userItem: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    gap: 10,
-    alignItems: "center",
+  button: {
+    marginTop: 20,
     padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
-  },
-  userDetailButton: {
-    padding: 10,
+    backgroundColor: "#C9D4FF",
     borderRadius: 5,
-    backgroundColor: "#f0f0f0",
-    marginRight: 10,
+  },
+  user: {
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: "#C9D4FF",
+    borderRadius: 5,
+    width: 600,
+    textAlign: "center"
+  },
+  userDetail: {
+    marginBottom: 10,
   },
   userActions: {
     flexDirection: "row",
     gap: 10,
-  },
-  userName: {
-    fontSize: 16,
-    color: "#333",
-    fontWeight: "bold",
+    justifyContent: "center",
   },
   editButton: {
     padding: 5,
@@ -38,12 +37,15 @@ const styles = StyleSheet.create({
     minWidth: 70,
     alignItems: "center",
   },
-  detailsButton: {
+  deleteButton: {
     padding: 5,
     borderRadius: 5,
-    backgroundColor: "#ADD8E6",
+    backgroundColor: "#FF6347",
     minWidth: 70,
     alignItems: "center",
+  },
+  text: {
+    fontSize: 16,
   },
 });
 

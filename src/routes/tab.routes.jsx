@@ -2,34 +2,24 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
 
 import Home from "../screens/Home";
-import Category from "../screens/Category";
+import Profile from "../screens/Profile";
+import Form from "../screens/Form";
 import Users from "../screens/Users";
 import { user } from "../data/Profile";
-import Sobre from "../screens/Sobre";
-import Filiais from "../screens/Filiais";
+;
+import usersRepository from "../models/user/UserRepository";
+import DevPage from "../screens/DevPage";
+
+const users = usersRepository.getAll();
 
 const Tab = createBottomTabNavigator();
 
 const TabRoutes = () => {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
-      <Tab.Screen
-        name="Filiais"
-        component={Filiais}
-        initialParams={{ data: user }}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <Feather
-              name="user"
-              size={24}
-              color={focused ? "#131313" : "#D6D6D6"}
-            />
-          ),
-          tabBarLabel: "Filiais",
-          tabBarActiveTintColor: "#131313",
-          tabBarInactiveTintColor: "#D6D6D6",
-        }}
-      />
+    <Tab.Navigator
+      screenOptions={{ headerShown: false }}
+      initialRouteName="Home"
+    >
       <Tab.Screen
         name="Home"
         component={Home}
@@ -46,27 +36,10 @@ const TabRoutes = () => {
           tabBarInactiveTintColor: "#D6D6D6",
         }}
       />
-
-      <Tab.Screen
-        name="Category"
-        component={Category}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <Feather
-              name="list"
-              size={24}
-              color={focused ? "#131313" : "#D6D6D6"}
-            />
-          ),
-          tabBarLabel: "Categorias",
-          tabBarActiveTintColor: "#131313",
-          tabBarInactiveTintColor: "#D6D6D6",
-        }}
-      />
-
-      <Tab.Screen
+          <Tab.Screen
         name="Users"
         component={Users}
+        initialParams={{ users }}
         options={{
           tabBarIcon: ({ focused }) => (
             <Feather
@@ -80,9 +53,29 @@ const TabRoutes = () => {
           tabBarInactiveTintColor: "#D6D6D6",
         }}
       />
+
       <Tab.Screen
-        name="Sobre"
-        component={Sobre}
+        name="Profile"
+        component={Profile}
+        initialParams={{ data: user }}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Feather
+              name="user"
+              size={24}
+              color={focused ? "#131313" : "#D6D6D6"}
+            />
+          ),
+          tabBarLabel: "Perfil",
+          tabBarActiveTintColor: "#131313",
+          tabBarInactiveTintColor: "#D6D6D6",
+        }}
+      />
+
+      <Tab.Screen
+        name="Form"
+        component={Form}
+        initialParams={{ user: null, edit: false }}
         options={{
           tabBarIcon: ({ focused }) => (
             <Feather
@@ -91,12 +84,28 @@ const TabRoutes = () => {
               color={focused ? "#131313" : "#D6D6D6"}
             />
           ),
-          tabBarLabel: "Sobre",
+          tabBarLabel: "Cadastro",
           tabBarActiveTintColor: "#131313",
           tabBarInactiveTintColor: "#D6D6D6",
         }}
       />
-
+      <Tab.Screen
+        name="DevPage"
+        component={DevPage}
+        initialParams={{ user: null, edit: false }}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Feather
+              name="list"
+              size={24}
+              color={focused ? "#131313" : "#D6D6D6"}
+            />
+          ),
+          tabBarLabel: "DevPage",
+          tabBarActiveTintColor: "#131313",
+          tabBarInactiveTintColor: "#D6D6D6",
+        }}
+      />
     </Tab.Navigator>
   );
 };

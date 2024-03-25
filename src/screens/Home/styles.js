@@ -12,9 +12,6 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "#C9D4FF",
     borderRadius: 5,
-  },
-  img: {
-    with: 10
   }
 });
 

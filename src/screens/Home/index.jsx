@@ -10,16 +10,17 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <Image source={require('../../../assets/Logo1.png')}
-      style={styles.img}></Image>
+    />
       <Title title="Bem vindo a Rede Tim Maia Colégios!" />
 
-      <TouchButton route="Filiais" title="Ver filiais" data={user} />
+      <TouchButton route="Profile" title="Profile" data={user} />
 
-      <TouchButton route="Category" title="Conheça a Dev" />
+      <TouchButton route="Form" title="Cadastrar Filial" />
 
-      <TouchButton route="Sobre" title="Sobre" />
+      <TouchButton route="Users" title="Ver Filiais" />
 
-      <TouchButton route="Users" title="Adicionar Filial" />
+      <TouchButton route="DevPage" title="Sobre a Dev" />
+
     </View>
   );
 }
